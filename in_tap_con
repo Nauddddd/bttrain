@@ -5,14 +5,12 @@ using namespace std;
 #define ll long long
 #define mx 12
 
-int Bool[mx]={0};
-int A[mx];
 int n;
 
 void solve(int n){
-    for(int i=1;i<=1<<n;i++){
+    for(int i=0;i<1<<n;i++){
         for(int j=0;j<n;j++){
-            if((i>>j)%2==1)
+            if((i>>j)&1)
                 cout<<j+1<<" ";
         }cout<<endl;
     }
