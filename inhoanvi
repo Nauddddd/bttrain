@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+#define mx 12
+
+int Bool[mx]={0};
+int A[mx];
+int n;
+
+void xuat(){
+     for(int i=1;i<=n;i++)
+            cout<<A[i]<<" ";
+            cout<<endl;
+}
+
+void solve(int k){
+    for(int i=1;i<=n;i++){
+        if(!Bool[i]){
+            A[k]=i;
+            Bool[i]=1;
+        if(k==n)
+        xuat();
+        else solve(k+1);
+        Bool[i]=0;
+        }
+    }
+}
+
+int main(){
+    cout<<"Nhap n:";
+    cin>>n;
+    solve(1);
+    return 0;
+}
+
